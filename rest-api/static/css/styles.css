@@ -70,9 +70,9 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
   border: 1px solid #D1D1D1;
   border-radius: 4px;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 1rem;
 }
 
@@ -98,7 +98,7 @@ button {
   border: 1px solid #33C3F0;
   cursor: pointer;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 1rem;
   margin-left: 0;
 }
@@ -107,3 +107,55 @@ li span {
   float: right;
   cursor: pointer;
 }
+
+.odd {background: #bada55;}
+
+.fade.ng-enter {
+  animation: 2s appear;
+}
+.fade.ng-leave {
+  animation: 0.5s disappear;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    font-size: 1.5rem;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

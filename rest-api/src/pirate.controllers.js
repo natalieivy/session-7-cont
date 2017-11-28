@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Pirate = mongoose.model('Pirate');
-
+ 
 exports.findAll = function (req, res) {
     Pirate.find({}, function (err, results) {
         return res.send(results);
@@ -21,8 +21,25 @@ exports.add = function (req, res) {
     });
 };
 
-exports.update = function () { };
-exports.delete = function () { };
+
+exports.update = function (req, res) {
+    const id = req.params.id;
+    const updates = req.body;
+
+    Pirate.update({ '_id': id }, updates,
+        function (err) {
+            if (err) return console.log(err);
+            return res.sendStatus(202);
+        });
+};
+
+
+exports.delete = function (req, res) {
+    let id = req.params.id
+    Pirate.remove({ '_id': id }, function(result){
+        return res.send(result)
+    })
+};
 
 exports.import = function (req, res) {
     // Pirate below refers to the mongoose schema. create() is a mongoose method
@@ -36,3 +53,34 @@ exports.import = function (req, res) {
             return res.send(202);
         });
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
